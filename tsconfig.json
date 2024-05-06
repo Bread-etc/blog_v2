@@ -21,7 +21,12 @@
     "noFallthroughCasesInSwitch": true,
 
     // 配置相对路径的根目录
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components": ["src/components/*"],
+      "@images": ["/src/assets/images/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
