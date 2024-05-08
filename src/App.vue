@@ -1,18 +1,16 @@
 <script setup lang="ts">
 import { NMessageProvider } from "naive-ui"
-import Header from "../src/components/header.vue"
-import Footer from "../src/components/footer.vue"
+import Header from "./components/side.vue"
 
 </script>
 
 <template>
   <n-message-provider>
-    <div id="app" class="">
+    <div id="app" class="flex justify-center">
       <Header />
-      <div class="">
+      <div class="flex-1">
         <router-view></router-view>
       </div>
-      <Footer />
     </div>
   </n-message-provider>
 </template>
