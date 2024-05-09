@@ -8,7 +8,7 @@ import Header from "./components/side.vue"
   <n-message-provider>
     <div id="app" class="flex justify-center">
       <Header />
-      <div class="flex-1">
+      <div class="flex-1 text-amber">
         <router-view></router-view>
       </div>
     </div>
