@@ -21,7 +21,7 @@ export interface AxiosOptions extends AxiosRequestConfig {
 }
 
 /**
- *  定义拦截器抽象类, 在index.ts文件中继承实现
+ *  定义拦截器抽象类, 在index.ts文件中继承实现 [请求 -> 响应]
  */
 export abstract class RequestInterceptors {
     // 请求拦截器
