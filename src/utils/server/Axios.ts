@@ -4,6 +4,7 @@
 
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 import { AxiosOptions, RequestInterceptors } from "./type";
+import AbortAxios from "./AbortAxios";
 
 class AxiosMax {
     // axios实例, 通过axios.create()方法创建
@@ -65,8 +66,18 @@ class AxiosMax {
             responseInterceptorsCatch
         } = this.interceptors;
 
+        // 创建取消请求实例
+        const abortAxios = new AbortAxios();
+
         // 挂载请求拦截器
         this.axiosInstance.interceptors.request.use((config: InternalAxiosRequestConfig) => {
+            // 是否清除重复请求
+            const abortRepetitveRequest = (config as unknown as any)?.abortRepetitveRequest ?? this.options.abortRepetitiveRequest;
+            if (abortRepetitveRequest) {
+                // 存储请求标识
+                abortAxios.addPending(config);
+            }
+
             if (requestInterceptors) {
                 // 先交给 requestInterceptors 做相应的配置
                 config = requestInterceptors(config);
@@ -76,6 +87,9 @@ class AxiosMax {
 
         // 挂载响应拦截器
         this.axiosInstance.interceptors.response.use((res: AxiosResponse) => {
+            // 取消请求
+            res && abortAxios.removePending(res.config);
+
             if (responseInterceptor) {
                 res = responseInterceptor(res);
             }
