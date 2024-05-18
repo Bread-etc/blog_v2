@@ -108,5 +108,3 @@ class AxiosMax {
         })
     }
 }
-
-export default AxiosMax;
