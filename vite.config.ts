@@ -17,5 +17,9 @@ export default defineConfig({
       "@components": resolve(__dirname, "src/components"),
       "@images": resolve(__dirname, "src/assets/images")
     }
+  },
+  server: {
+    port: 3030,
+    cors: true
   }
 })

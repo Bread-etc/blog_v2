@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3030";
+const baseUrl = "https://admin.hastur23.top";
 
 const staticAxiosConfig = { baseUrl: baseUrl };
 

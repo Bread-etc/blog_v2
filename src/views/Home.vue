@@ -1,7 +1,9 @@
 <template>
-    <div>
-        fdasfsf
-    </div>
+    <div class="p-sm">
+        <div>
+            fdasfsf
+        </div>
+        </div>
 </template>
 
 <script lang="ts" setup>
