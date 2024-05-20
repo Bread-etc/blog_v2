@@ -1,31 +1,28 @@
 <template>
     <div class="flex flex-col rounded-lg relative" id="authorCard">
-        <div class="flex p-sm z-10">
-            <a href="#logo">
-                <img src="@images/bread.webp" alt="image/nav" class="w-24px h-24px" />
-            </a>
-            <div>Bread_etc Blog</div>
+        <div class="flex justify-center p-5 z-10">
+            <n-avatar size="large" src="https://www.freeimg.cn/i/2024/05/19/664a1a0f4b164.jpg"></n-avatar>
+            <div class="ml-sm text-lg font-bold font-mono">Bread_etc</div>
         </div>
-        <div class="flex p-sm z-10">
-            站内搜索
+        <div class="flex justify-between px-5 py-2 z-10">
+            <div v-for="route in routes" class="bg-white rounded-lg p-2">{{ route.title }}</div>
         </div>
-        <div v-for="route in routes" class="z-10">{{ route.title }}</div>
+        <span class="tabler:stack-2"></span>
     </div>
 </template>
 
 <script lang="ts" setup>
-// import { useRouter } from 'vue-router';
-import { ref } from 'vue'
+import { useRouter } from 'vue-router';
+import { Stack2 } from "@vicons/tabler"''
+import { NAvatar } from 'naive-ui';
+import { ref } from 'vue';
 
-// const router = useRouter();
+const router = useRouter();
 const routes = ref([
-    { path: "/", title: "首页" },
-    { path: "/essay", title: "随笔" },
-    { path: "/contact", title: "留言" },
-    { path: "/about", title: "关于" }
+    { path: "/", title: "随笔", icon: "tabler:stack-2" },
+    { path: "/contact", title: "留言", icon: "" },
+    { path: "/about", title: "关于", icon: "" }
 ])
-
-// 路由跳转
 
 </script>
 

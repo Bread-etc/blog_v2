@@ -27,6 +27,12 @@ importers:
         specifier: '4'
         version: 4.3.2(vue@3.4.26(typescript@5.4.5))
     devDependencies:
+      '@vicons/tabler':
+        specifier: ^0.12.0
+        version: 0.12.0
+      '@vicons/utils':
+        specifier: ^0.1.4
+        version: 0.1.4(vue@3.4.26(typescript@5.4.5))
       '@vitejs/plugin-vue':
         specifier: ^5.0.4
         version: 5.0.4(vite@5.2.11(@types/node@20.12.8))(vue@3.4.26(typescript@5.4.5))
@@ -517,6 +523,9 @@ packages:
   '@types/lodash@4.17.1':
     resolution: {integrity: sha512-X+2qazGS3jxLAIz5JDXDzglAF3KpijdhFxlf/V1+hEsOUc+HnWi81L/uv/EvGuV90WY+7mPGFCUDGfQC3Gj95Q==}
 
+  '@types/node@14.14.45':
+    resolution: {integrity: sha512-DssMqTV9UnnoxDWu959sDLZzfvqCF0qDNRjaWeYSui9xkFe61kKo4l1TWNTQONpuXEm+gLMRvdlzvNHBamzmEw==}
+
   '@types/node@20.12.8':
     resolution: {integrity: sha512-NU0rJLJnshZWdE/097cdCBbyW1h4hEg0xpovcoAQYHl8dnEyp/NAOiE45pvc+Bd1Dt+2r94v2eGFpQJ4R7g+2w==}
 
@@ -609,6 +618,14 @@ packages:
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0 || ^5.0.0-0
 
+  '@vicons/tabler@0.12.0':
+    resolution: {integrity: sha512-3+wUFuxb7e8OzZ8Wryct1pzfA2vyoF4lwW98O9s27ZrfCGaJGNmqG+q8A7vQ92Mf+COCgxpK+rhNPTtTvaU6qw==}
+
+  '@vicons/utils@0.1.4':
+    resolution: {integrity: sha512-OHI19qVNN6i+uPQ+Y3f2s0dUxwsYnOCcKBW7XOU4yXXO1aU3ZoKpblCc3+4N0qmgoJs5rWKRAaMisipqEXJwAg==}
+    peerDependencies:
+      vue: ^3.0.6
+
   '@vitejs/plugin-vue@5.0.4':
     resolution: {integrity: sha512-WS3hevEszI6CEVEx28F8RjTX97k3KsrcY6kvTg7+Whm5y3oYvcqzVeGCU3hxSAn4uY2CLCkeokkGKpoctccilQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -673,6 +690,9 @@ packages:
 
   '@vueuse/shared@10.9.0':
     resolution: {integrity: sha512-Uud2IWncmAfJvRaFYzv5OHDli+FbOzxiVEQdLCKQKLyhz94PIyFC3CHcH7EDMwIn8NPtD06+PNbC/PiO0LGLtw==}
+
+  '@xicons/utils@0.1.4':
+    resolution: {integrity: sha512-uXxKDLz9abr80yJC05XSTq6wlyFcdW+N/1IYJkeHjzzXVc4VQ0sEYMoMMTjAH7HQBOyOkzOB4pf5NGF72lwa8Q==}
 
   acorn@8.11.3:
     resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
@@ -759,6 +779,9 @@ packages:
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
+
+  css-render@0.13.9:
+    resolution: {integrity: sha512-n3C4ZH59rveBrUlAD7n0Ze9/gUMKa4dlH1C9CWKpGcIHR/xRcIVXzBGy1iw8WWq2ySmn2/ZqOpySQNAK5Pb6sw==}
 
   css-render@0.15.14:
     resolution: {integrity: sha512-9nF4PdUle+5ta4W5SyZdLCCmFd37uVimSjg1evcTqKJCyvCEEj12WKzOSBNak6r4im4J4iYXKH1OWpUV5LBYFg==}
@@ -1708,6 +1731,8 @@ snapshots:
 
   '@types/lodash@4.17.1': {}
 
+  '@types/node@14.14.45': {}
+
   '@types/node@20.12.8':
     dependencies:
       undici-types: 5.26.5
@@ -1867,6 +1892,13 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
+  '@vicons/tabler@0.12.0': {}
+
+  '@vicons/utils@0.1.4(vue@3.4.26(typescript@5.4.5))':
+    dependencies:
+      '@xicons/utils': 0.1.4
+      vue: 3.4.26(typescript@5.4.5)
+
   '@vitejs/plugin-vue@5.0.4(vite@5.2.11(@types/node@20.12.8))(vue@3.4.26(typescript@5.4.5))':
     dependencies:
       vite: 5.2.11(@types/node@20.12.8)
@@ -1971,6 +2003,10 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
+  '@xicons/utils@0.1.4':
+    dependencies:
+      css-render: 0.13.9
+
   acorn@8.11.3: {}
 
   ansi-styles@3.2.1:
@@ -2060,6 +2096,12 @@ snapshots:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+
+  css-render@0.13.9:
+    dependencies:
+      '@emotion/hash': 0.8.0
+      '@types/node': 14.14.45
+      csstype: 3.0.11
 
   css-render@0.15.14:
     dependencies:
