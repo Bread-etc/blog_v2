@@ -1,11 +1,17 @@
 <template>
     <div class="flex flex-col rounded-lg relative" id="authorCard">
-        <div class="flex justify-center p-5 z-10">
+        <div class="flex justify-center py-4 px-10 z-10">
             <n-avatar size="large" src="https://www.freeimg.cn/i/2024/05/19/664a1a0f4b164.jpg"></n-avatar>
-            <div class="ml-sm text-lg font-bold font-mono">Bread_etc</div>
+            <div class="ml-sm text-lg" style="font-weight: 600;">面包etc</div>
         </div>
-        <div class="flex justify-between px-5 py-2 z-10">
-            <div v-for="route in routes" class="bg-white rounded-lg p-2">{{ route.title }}</div>
+        <div class="flex justify-center px-10 z-10">
+            <n-button-group>
+                <n-button v-for="route in routes"
+                    class=" bg-light rounded-lg p-2 flex flex-col justify-center items-center text-lg"
+                    @click="handleNavigate(route.path)">
+                    <n-icon :component="route.icon"></n-icon>
+                </n-button>
+            </n-button-group>
         </div>
         <span class="tabler:stack-2"></span>
     </div>
@@ -13,16 +19,20 @@
 
 <script lang="ts" setup>
 import { useRouter } from 'vue-router';
-import { Stack2 } from "@vicons/tabler"''
-import { NAvatar } from 'naive-ui';
+import { Stack2 as stack, Message as connact, At as at } from "@vicons/tabler";
+import { NAvatar, NIcon, NButton, NButtonGroup } from 'naive-ui';
 import { ref } from 'vue';
 
 const router = useRouter();
 const routes = ref([
-    { path: "/", title: "随笔", icon: "tabler:stack-2" },
-    { path: "/contact", title: "留言", icon: "" },
-    { path: "/about", title: "关于", icon: "" }
+    { path: "/", title: "随笔", icon: stack, active: true },
+    { path: "/contact", title: "留言", icon: connact },
+    { path: "/about", title: "关于", icon: at }
 ])
+
+const handleNavigate = (path: string): void => {
+    router.push(path);
+}
 
 </script>
 
@@ -31,7 +41,7 @@ const routes = ref([
     position: relative;
     overflow: hidden;
     /* 确保模糊背景不会溢出 */
-    height: 90vh;
+    height: 95vh;
 }
 
 #authorCard::before {

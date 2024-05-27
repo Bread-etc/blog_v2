@@ -7,8 +7,8 @@ import Side from "./components/side.vue";
 <template>
   <n-message-provider>
     <div class="flex justify-center items-center h-screen">
-      <Side class="p-2 mr-sm"/>
-      <div class="p-2 flex-1 bg-gray rounded-lg" id="routeView">
+      <Side class="p-2 mr-1"/>
+      <div class="p-2 flex-1 bg-gray rounded-lg max-w-2xl" id="routeView">
         <router-view></router-view>
       </div>
     </div>
@@ -17,6 +17,6 @@ import Side from "./components/side.vue";
 
 <style scoped>
 #routeView {
-  height: 90vh;
+  height: 95vh;
 }
 </style>

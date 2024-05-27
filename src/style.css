@@ -1,5 +1,8 @@
+@import 'lxgw-wenkai-webfont/lxgwwenkai-regular.css';
+@import 'lxgw-wenkai-webfont/lxgwwenkai-bold.css';
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: "LXGW WenKai", Arial, Helvetica, sans-serif; */
   /* line-height: 1.5; */
   font-weight: 400;
 
@@ -23,9 +26,10 @@ a:hover {
 }
 
 body {
+  font-family: "LXGW WenKai", Arial, Helvetica, sans-serif;
   margin: 0;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
 }
 
 /* h1 {
@@ -72,4 +76,10 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+
+pre,code {
+  /* Lite version */
+  font-family: "LXGW WenKai Mono Lite", sans-serif;
 }
