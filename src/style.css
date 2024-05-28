@@ -28,7 +28,7 @@ a:hover {
 body {
   font-family: "LXGW WenKai", Arial, Helvetica, sans-serif;
   margin: 0;
-  padding-left: .5rem;
+  padding-left: .3rem;
   padding-right: .5rem;
 }
 
@@ -80,6 +80,5 @@ button:focus-visible {
 
 
 pre,code {
-  /* Lite version */
   font-family: "LXGW WenKai Mono Lite", sans-serif;
 }

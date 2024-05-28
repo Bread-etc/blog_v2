@@ -6,9 +6,9 @@ import Side from "./components/side.vue";
 
 <template>
   <n-message-provider>
-    <div class="flex justify-center items-center h-screen">
-      <Side class="p-2 mr-1"/>
-      <div class="p-2 flex-1 bg-gray rounded-lg max-w-2xl" id="routeView">
+    <div class="flex items-center h-screen">
+      <Side class="px-4 py-2 mr-1"/>
+      <div class="px-4 py-2 flex-1 bg-gray rounded-lg max-w-2xl" id="routeView">
         <router-view></router-view>
       </div>
     </div>
