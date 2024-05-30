@@ -8,7 +8,7 @@ import Side from "./components/side.vue";
   <n-message-provider>
     <div class="flex items-center h-screen">
       <Side class="px-8 py-2 mr-1"/>
-      <div class="px-4 py-2 flex-1 bg-gray rounded-lg max-w-2xl" id="routeView">
+      <div class="px-4 py-2 flex-1 bg-light rounded-lg max-w-2xl" id="routeView">
         <router-view></router-view>
       </div>
     </div>

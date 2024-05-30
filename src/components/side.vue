@@ -13,13 +13,13 @@
                 <n-icon :component="arrow"></n-icon>
             </n-button>
         </div>
-        <n-divider class="px-2 m-0 text-xs" title-placement="center">
+        <n-divider class="px-2 text-xs" title-placement="center">
             {{ sideTitle[0].title }}
         </n-divider>
         <div class="px-2 z-10 flex-1 text-stroke-dark">
             123456
         </div>
-        <n-divider class="px-2 m-0" />
+        <n-divider class="px-2 text-xs" />
         <div class="px-2 flex justify-center">
             <n-button v-for="item in websiteButtons" class="text-lg" circle quaternary ghost>
                 <a :href="item.path" class="text-black transition ease-in-out hover:text-amber duration-300">
@@ -89,5 +89,9 @@ const sideTitle = ref([
     position: relative;
     z-index: 10;
     /* 确保文字和其他内容在模糊背景层上面 */
+}
+
+.n-divider {
+    --n-color: #a1a1a9 !important;
 }
 </style>
