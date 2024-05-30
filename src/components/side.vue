@@ -3,7 +3,7 @@
         <div class="flex flex-col justify-center py-4 mx-10 z-10">
             <n-image src="https://www.freeimg.cn/i/2024/05/19/664a1a0f4b164.jpg" class="rounded-xl" width="120"
                 :preview-disabled="true"></n-image>
-            <div class="mt-1 text-center text-lg">面包etc</div>
+            <div class="mt-1 text-center text-lg font-bold">面包etc</div>
         </div>
         <div class="px-5 z-10 flex flex-col justify-center">
             <n-button v-for="route in routes" class="text-lg flex items-center" @click="handleNavigate(route.path)"
@@ -13,14 +13,16 @@
                 <n-icon :component="arrow"></n-icon>
             </n-button>
         </div>
-        <n-divider />
-        <div class="px-2 z-10">
-            <span class="text-shadow-color-zinc text-md">最近更新</span>
+        <n-divider class="px-2 m-0 text-xs" title-placement="center">
+            {{ sideTitle[0].title }}
+        </n-divider>
+        <div class="px-2 z-10 flex-1 text-stroke-dark">
+            123456
         </div>
-        <n-divider />
-        <div class="px-2 z-10">
+        <n-divider class="px-2 m-0" />
+        <div class="px-2 flex justify-center">
             <n-button v-for="item in websiteButtons" class="text-lg" circle quaternary ghost>
-                <a :href="item.path" class="text-black">
+                <a :href="item.path" class="text-black transition ease-in-out hover:text-amber duration-300">
                     <n-icon :component="item.icon"></n-icon>
                 </a>
             </n-button>
@@ -49,6 +51,12 @@ const websiteButtons = ref([
     { path: "https://github.com/Bread-etc", title: "github", icon: github },
     { path: "mailto:mianbao.etc@gmail.com", title: "gmail", icon: gmail }
 ]);
+
+let index = ref<number>(0);
+const sideTitle = ref([
+    { title: "最近更新", index: index.value },
+    { title: "大纲", index: 1 }
+])
 
 </script>
 
@@ -82,5 +90,4 @@ const websiteButtons = ref([
     z-index: 10;
     /* 确保文字和其他内容在模糊背景层上面 */
 }
-
 </style>
